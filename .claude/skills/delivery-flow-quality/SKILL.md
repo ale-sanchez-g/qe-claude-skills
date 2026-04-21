@@ -1,7 +1,7 @@
 ---
 name: delivery-flow-quality
 description: Use this skill to assess DORA-aligned delivery quality by measuring lead time, deployment frequency, change failure rate, and MTTR.
-dependencies: python>=3.8
+dependencies: python>=3.12
 ---
 
 # Delivery & Flow Quality (DORA-aligned)

@@ -1,7 +1,7 @@
 ---
 name: reliability-production-stability
 description: Use this skill to evaluate quality through production reliability, uptime, error rates, incident trends, and latency.
-dependencies: python>=3.8
+dependencies: python>=3.12
 ---
 
 # Reliability & Production Stability

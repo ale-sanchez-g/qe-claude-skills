@@ -1,7 +1,7 @@
 ---
 name: architecture-system-design-quality
 description: Use this skill to evaluate architecture quality with coupling, blast radius, resilience pattern coverage, and drift metrics.
-dependencies: python>=3.8
+dependencies: python>=3.12
 ---
 
 # Architecture & System Design Quality

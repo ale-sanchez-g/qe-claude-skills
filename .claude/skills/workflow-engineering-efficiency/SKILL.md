@@ -1,7 +1,7 @@
 ---
 name: workflow-engineering-efficiency
 description: Use this skill to measure engineering workflow efficiency with WIP, cycle time, PR review dynamics, and rework.
-dependencies: python>=3.8
+dependencies: python>=3.12
 ---
 
 # Workflow & Engineering Efficiency

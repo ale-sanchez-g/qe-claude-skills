@@ -1,7 +1,7 @@
 ---
 name: codebase-health-maintainability
 description: Use this skill to track maintainability risks such as complexity, churn, duplication, coupling, and technical debt.
-dependencies: python>=3.8
+dependencies: python>=3.12
 ---
 
 # Codebase Health & Maintainability
