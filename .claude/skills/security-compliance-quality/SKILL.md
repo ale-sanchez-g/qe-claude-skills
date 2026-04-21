@@ -1,7 +1,7 @@
 ---
 name: security-compliance-quality
 description: Use this skill to track security quality with vulnerability density, remediation speed, secret exposure, and dependency risk.
-dependencies: python>=3.12
+compatibility: python>=3.12
 ---
 
 # Security & Compliance Quality

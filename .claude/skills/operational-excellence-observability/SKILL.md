@@ -1,7 +1,7 @@
 ---
 name: operational-excellence-observability
 description: Use this skill to measure detection and response quality through alert signal quality, on-call load, runbooks, and telemetry coverage.
-dependencies: python>=3.12
+compatibility: python>=3.12
 ---
 
 # Operational Excellence & Observability

@@ -1,7 +1,7 @@
 ---
 name: user-centric-quality
 description: Use this skill to evaluate product quality outcomes from user and customer impact signals.
-dependencies: python>=3.12
+compatibility: python>=3.12
 ---
 
 # User-Centric Quality (Outcome-Based)
