@@ -1,6 +1,7 @@
 ---
 name: operational-excellence-observability
 description: Use this skill to measure detection and response quality through alert signal quality, on-call load, runbooks, and telemetry coverage.
+dependencies: python>=3.8
 ---
 
 # Operational Excellence & Observability
@@ -43,6 +44,20 @@ Use this skill to evaluate detection/response effectiveness and reduce operation
 - Alert quality report and cleanup backlog
 - On-call sustainability assessment
 - Telemetry gap closure plan by critical journey
+
+## Resources
+
+### Scripts
+- `scripts/alert_quality_audit.py` — Score alert quality (noise ratio, actionable vs. noisy), on-call load, and TTD proxy from an alerts CSV.
+  ```
+  python scripts/alert_quality_audit.py --alerts alerts.csv --days 30
+  ```
+
+### References
+- `references/observability-standards.md` — Three-pillar minimum standards (logs/metrics/traces), alert quality classification, TTD targets, on-call sustainability thresholds, and runbook requirements.
+
+### Assets
+- `assets/runbook-template.md` — Standardised runbook structure with diagnosis steps, escalation path, rollback procedure, and post-incident checklist.
 
 ## Script
 - `bash .claude/skills/shared/scripts/generate_quality_report.sh operational-excellence-observability 30`

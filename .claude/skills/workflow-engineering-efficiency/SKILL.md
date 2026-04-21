@@ -1,6 +1,7 @@
 ---
 name: workflow-engineering-efficiency
 description: Use this skill to measure engineering workflow efficiency with WIP, cycle time, PR review dynamics, and rework.
+dependencies: python>=3.8
 ---
 
 # Workflow & Engineering Efficiency
@@ -42,6 +43,20 @@ Use this skill to identify execution constraints that degrade quality, increase 
 - Flow efficiency scorecard and bottleneck analysis
 - Review policy improvements with measurable targets
 - Rework reduction plan tied to release stability
+
+## Resources
+
+### Scripts
+- `scripts/pr_analytics.py` — Measure PR cycle time, first review latency, size distribution, rework rate, and WIP from a pull-requests CSV.
+  ```
+  python scripts/pr_analytics.py --prs prs.csv --days 30
+  ```
+
+### References
+- `references/flow-efficiency-patterns.md` — Cycle time benchmarks, PR size guidelines, first review SLOs, rework rate interpretation, WIP limit guidance, value stream waste patterns, and SPACE framework alignment.
+
+### Assets
+- `assets/flow-value-stream-template.md` — Value stream assessment covering WIP, cycle time distribution, PR quality, rework rate, flow waste identification, and trend tracking.
 
 ## Script
 - `bash .claude/skills/shared/scripts/generate_quality_report.sh workflow-engineering-efficiency 30`

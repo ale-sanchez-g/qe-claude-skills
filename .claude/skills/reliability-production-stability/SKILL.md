@@ -1,6 +1,7 @@
 ---
 name: reliability-production-stability
 description: Use this skill to evaluate quality through production reliability, uptime, error rates, incident trends, and latency.
+dependencies: python>=3.8
 ---
 
 # Reliability & Production Stability
@@ -44,6 +45,20 @@ Use this skill to evaluate whether production behavior is reliable under normal 
 - Reliability scorecard with trend and service segmentation
 - Top recurring failure modes and owner-assigned remediations
 - Capacity/risk forecast for next release cycle
+
+## Resources
+
+### Scripts
+- `scripts/compute_reliability.py` — Compute availability, MTBF, incident rates, and error budget from events CSV. Segments by service and severity.
+  ```
+  python scripts/compute_reliability.py --events events.csv --days 30
+  ```
+
+### References
+- `references/slo-patterns.md` — SLO target tables by tier, error budget calculation, burn-rate alerting guide, and MTBF improvement approach.
+
+### Assets
+- `assets/reliability-scorecard-template.md` — Fillable scorecard with availability, incident summary, MTTR, root cause classification, and hardening backlog.
 
 ## Script
 - `bash .claude/skills/shared/scripts/generate_quality_report.sh reliability-production-stability 30`

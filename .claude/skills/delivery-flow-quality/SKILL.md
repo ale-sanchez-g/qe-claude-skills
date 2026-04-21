@@ -1,6 +1,7 @@
 ---
 name: delivery-flow-quality
 description: Use this skill to assess DORA-aligned delivery quality by measuring lead time, deployment frequency, change failure rate, and MTTR.
+dependencies: python>=3.8
 ---
 
 # Delivery & Flow Quality (DORA-aligned)
@@ -43,6 +44,20 @@ Use this skill to run a full DORA assessment, identify systemic bottlenecks, and
 - DORA scorecard by service/team
 - Bottleneck map (where time is spent)
 - 30/60/90-day action plan with expected metric movement
+
+## Resources
+
+### Scripts
+- `scripts/compute_dora.py` — Compute all four DORA metrics from git history and a deployments CSV. Classifies output into an Elite/High/Medium/Low performance band.
+  ```
+  python scripts/compute_dora.py --repo /path/to/repo --deployments deploys.csv --days 30
+  ```
+
+### References
+- `references/dora-benchmarks.md` — DORA performance band thresholds, lead time decomposition stages, and key anti-patterns.
+
+### Assets
+- `assets/dora-scorecard-template.md` — Fillable scorecard template for per-service/team DORA reviews including 30/60/90-day targets.
 
 ## Script
 - `bash .claude/skills/shared/scripts/generate_quality_report.sh delivery-flow-quality 30`

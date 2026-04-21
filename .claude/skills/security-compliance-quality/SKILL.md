@@ -1,6 +1,7 @@
 ---
 name: security-compliance-quality
 description: Use this skill to track security quality with vulnerability density, remediation speed, secret exposure, and dependency risk.
+dependencies: python>=3.8
 ---
 
 # Security & Compliance Quality
@@ -42,6 +43,20 @@ Use this skill to evaluate security risk exposure and remediation discipline as 
 - Security quality scorecard by service/tier
 - SLA compliance and overdue-risk report
 - Prioritized remediation plan with risk burn-down targets
+
+## Resources
+
+### Scripts
+- `scripts/vuln_triage.py` — Triage open vulnerabilities by risk score (CVSS × exploit maturity × asset tier), SLA breach status, and remediation trend.
+  ```
+  python scripts/vuln_triage.py --vulns vulns.csv --days 90
+  ```
+
+### References
+- `references/remediation-slas.md` — SLA tables by severity, risk score formula, dependency risk assessment, secret exposure response procedure, and compliance mapping (PCI-DSS, SOC 2, ISO 27001).
+
+### Assets
+- `assets/vulnerability-register-template.md` — Register tracking open vulns by severity, SLA compliance, dependency watchlist, secret incidents, and remediation roadmap.
 
 ## Script
 - `bash .claude/skills/shared/scripts/generate_quality_report.sh security-compliance-quality 30`

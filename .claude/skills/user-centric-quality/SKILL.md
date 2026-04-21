@@ -1,6 +1,7 @@
 ---
 name: user-centric-quality
 description: Use this skill to evaluate product quality outcomes from user and customer impact signals.
+dependencies: python>=3.8
 ---
 
 # User-Centric Quality (Outcome-Based)
@@ -43,6 +44,20 @@ Use this skill to assess quality through user impact, not internal proxy metrics
 - Journey quality scorecard with segment-level breakdown
 - Escaped defect taxonomy and top impact clusters
 - Outcome-driven improvement roadmap
+
+## Resources
+
+### Scripts
+- `scripts/journey_quality.py` — Compute journey success, failure, and abandonment rates from analytics events CSV. Segments by user cohort and release version.
+  ```
+  python scripts/journey_quality.py --events events.csv --days 30 --journeys "signup,checkout"
+  ```
+
+### References
+- `references/user-quality-signals.md` — Journey success rate thresholds, Apdex scoring guide, customer-reported defect SLAs, feature adoption interpretation, and feedback signal quality ranking.
+
+### Assets
+- `assets/journey-scorecard-template.md` — Scorecard covering journey success rates, Apdex, segment breakdowns, release cohort comparison, defect summary, and feature adoption.
 
 ## Script
 - `bash .claude/skills/shared/scripts/generate_quality_report.sh user-centric-quality 30`
