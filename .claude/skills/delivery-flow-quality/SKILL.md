@@ -5,7 +5,7 @@ description: Use this skill to assess DORA-aligned delivery quality by measuring
 
 # Delivery & Flow Quality (DORA-aligned)
 
-Use this skill when you need leading indicators of software delivery quality and organisational resilience.
+Use this skill when you need leading indicators of software delivery quality and organizational resilience.
 
 ## Tools
 - Git history and tags
