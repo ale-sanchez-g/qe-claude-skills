@@ -44,7 +44,7 @@ Rework = reopened tickets + PR iteration count > 2 + production rollbacks.
 
 ## WIP Limit Guidelines
 
-WIP limits force prioritisation over parallelism and reduce context switching.
+WIP limits force prioritization over parallelism and reduce context switching.
 
 | Team Size | Max WIP (in-progress) | Notes                                |
 |-----------|----------------------|--------------------------------------|
@@ -57,7 +57,7 @@ WIP limits force prioritisation over parallelism and reduce context switching.
 | Waste Type          | Symptom                                          | Fix                                           |
 |---------------------|--------------------------------------------------|-----------------------------------------------|
 | Queue wait          | Work items idle between states                  | WIP limits + daily blocked-item review        |
-| Handoff overhead    | Frequent cross-team dependencies in single work | Conways-law alignment; embed skills           |
+| Handoff overhead    | Frequent cross-team dependencies in single work | Conway's-law alignment; embed skills          |
 | Rework              | Items returned to previous state                | Definition of Done; earlier review            |
 | Over-processing     | More quality checks than risk warrants          | Right-size review by change class             |
 | Batch inflation     | Large epics shipped at once                     | Vertical slicing; continuous delivery cadence |
