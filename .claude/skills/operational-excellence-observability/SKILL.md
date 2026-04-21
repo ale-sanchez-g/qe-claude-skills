@@ -5,19 +5,44 @@ description: Use this skill to measure detection and response quality through al
 
 # Operational Excellence & Observability
 
-Use this skill when improving how quickly incidents are detected, triaged, and resolved.
+Use this skill to evaluate detection/response effectiveness and reduce operational toil while increasing incident handling precision.
 
-## Tools
+## Required tools
 - Alerting and paging analytics
-- On-call platform metrics
-- Runbook and telemetry inventory
+- On-call schedule/interruptions data
+- Runbook coverage inventory and freshness checks
+- Logs/metrics/traces instrumentation maps
+
+## Analysis runbook
+1. Compute TTD, alert noise, and on-call load by team/service.
+2. Classify alerts into actionable, duplicate, noisy, and stale.
+3. Audit runbook existence, completeness, and last validation date.
+4. Measure telemetry completeness for critical user journeys.
+5. Identify detector blind spots from postmortem timelines.
+6. Propose detection and runbook improvements with ownership.
+
+## Metric definitions (strict)
+- **TTD**: `first_actionable_signal_at - incident_start_at`
+- **Alert Noise Ratio**: non-actionable alerts / total alerts
+- **On-call Load**: pages per engineer per rotation window
+- **Runbook Coverage**: % critical alerts with validated runbooks
+- **Observability Coverage**: % critical flows with logs+metrics+traces
+
+## Expert diagnostic patterns
+- Low TTD but high MTTR: good detection, poor diagnosis/recovery.
+- High page volume with low incident conversion: noisy alert policies.
+- Observability gaps on top revenue journeys: unacceptable risk exposure.
+
+## Improvement interventions
+- Consolidate and deduplicate alerts by symptom hierarchy.
+- Add SLO-burn-rate alerts over threshold-only alerts.
+- Require runbook validation in incident readiness drills.
+- Enforce telemetry minimum standards for every service.
+
+## Deliverables
+- Alert quality report and cleanup backlog
+- On-call sustainability assessment
+- Telemetry gap closure plan by critical journey
 
 ## Script
 - `bash .claude/skills/shared/scripts/generate_quality_report.sh operational-excellence-observability 30`
-
-## Metrics
-- Time to Detect (TTD)
-- Alert Noise Ratio
-- On-call Load / Alerts per Engineer
-- Runbook Coverage (%)
-- Observability Coverage (logs, metrics, traces)

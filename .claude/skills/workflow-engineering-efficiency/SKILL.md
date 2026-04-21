@@ -5,18 +5,43 @@ description: Use this skill to measure engineering workflow efficiency with WIP,
 
 # Workflow & Engineering Efficiency
 
-Use this skill when assessing execution flow constraints that impact quality and delivery predictability.
+Use this skill to identify execution constraints that degrade quality, increase rework, and slow delivery.
 
-## Tools
-- Work item tracking systems
-- Pull request analytics
-- Release/rollback history
+## Required tools
+- Work tracking metrics (state transitions, queue times)
+- PR analytics (size, review latency, iteration count)
+- Release and rollback history
+- Ticket reopen/rework records
+
+## Analysis runbook
+1. Map value stream from "work started" to "work in production".
+2. Measure WIP, cycle time, queue time, and throughput by team.
+3. Analyze PR size/review delays and review quality signals.
+4. Quantify rework via reopen/rollback/cherry-pick patterns.
+5. Detect systemic flow constraints (handoffs, approvals, batching).
+6. Define flow improvements with expected quality impact.
+
+## Metric definitions (strict)
+- **WIP**: active items not yet delivered
+- **Cycle Time**: `in_progress_at -> production_at`
+- **PR Size & Review Time**: LOC changed and time-to-approved
+- **Rework Rate**: reopened tickets + rollbacks / completed changes
+
+## Expert diagnostic patterns
+- High WIP + long review delays: context switching and quality dilution.
+- Large PRs with repeated review rounds: late design feedback.
+- Stable throughput with high rework: speed achieved by cutting quality corners.
+
+## Improvement interventions
+- Set WIP limits with escalation for blocked work.
+- Cap PR size and enforce review response SLOs.
+- Shift design/risk review earlier (before large implementation).
+- Track rework as a first-class quality KPI in retrospectives.
+
+## Deliverables
+- Flow efficiency scorecard and bottleneck analysis
+- Review policy improvements with measurable targets
+- Rework reduction plan tied to release stability
 
 ## Script
 - `bash .claude/skills/shared/scripts/generate_quality_report.sh workflow-engineering-efficiency 30`
-
-## Metrics
-- Work in Progress (WIP)
-- Cycle Time
-- PR Size & Review Time
-- Rework Rate (reopened tickets, rollbacks)
