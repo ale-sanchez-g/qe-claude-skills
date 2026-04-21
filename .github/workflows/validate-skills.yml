@@ -1,0 +1,46 @@
+name: Validate Skills
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  validate:
+    name: Validate Skills with skills-ref
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install skills-ref
+        run: |
+          pip install "git+https://github.com/agentskills/agentskills.git#subdirectory=skills-ref"
+
+      - name: Validate all skills
+        run: |
+          skills=(
+            .claude/skills/architecture-system-design-quality
+            .claude/skills/codebase-health-maintainability
+            .claude/skills/delivery-flow-quality
+            .claude/skills/operational-excellence-observability
+            .claude/skills/reliability-production-stability
+            .claude/skills/security-compliance-quality
+            .claude/skills/user-centric-quality
+            .claude/skills/workflow-engineering-efficiency
+          )
+          exit_code=0
+          for skill in "${skills[@]}"; do
+            echo "Validating $skill..."
+            if ! skills-ref validate "$skill"; then
+              exit_code=1
+            fi
+          done
+          exit $exit_code
